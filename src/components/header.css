@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.header p {
+    font-family: 'Pacifico', cursive;
+    color: green;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+}

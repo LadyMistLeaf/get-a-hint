@@ -1,18 +1,34 @@
-import "./options.css";
+import { OptionsList, Option, Input, Label } from "./OptionStyle";
+import { INSPECTOR_ACTIONS, PEOPLE_ACTIONS } from "./constants";
 
-function Options() {
+function Options({ selectedPerson, selectedOption, onOptionChange}) {
+    const actions = (selectedPerson === "Inspector") ? INSPECTOR_ACTIONS : PEOPLE_ACTIONS;
+
     return (
-        <div className="options">
-            <input type="radio" name="option" id="person" />
-            <label htmlFor="person">Person</label>
-            <input type="radio" name="option" id="weapon"/>
-            <label htmlFor="weapon">Weapon</label>
-            <input type="radio" name="option" id="room" />
-            <label htmlFor="room">Room</label>
-            <input type="radio" name="option" id="alibi" />
-            <label htmlFor="alibi">Alibi</label>
-        </div>
+        <OptionsList>
+            {actions.map((option) => (
+                      <Option key={option}>
+                          <Input type="radio" name="option" checked={(selectedOption === option) ? true : false}id={option} onChange={() => onOptionChange(option)}/>
+                          <Label htmlFor={option}>{option}</Label>
+                      </Option>
+                  ))}
+        </OptionsList>
     );
 }
 
 export default Options;
+
+// {selectedPerson === "Inspector" &&
+//                 INSPECTOR_ACTIONS.map((option) => (
+//                     <Option>
+//                         <Input type="radio" name={option} id={option} />
+//                         <Label htmlFor={option}>{option}</Label>
+//                     </Option>
+//                 ))}
+
+//             {selectedPerson != "Inspector" && PEOPLE_ACTIONS.map((option) => (
+//                 <Option>
+//                         <Input type="radio" name={option} id={option} />
+//                         <Label htmlFor={option}>{option}</Label>
+//                     </Option>
+//             ))}

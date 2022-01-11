@@ -1,37 +1,20 @@
-import "./people.css";
+import { StyledPeople, Person, Input, Label } from "./PeopleStyle";
+import { PEOPLE } from "./constants";
 
-function People() {
+function People({onPersonChange, onOptionChange}) {
     return (
-        <div className="people">
-            <div>
-                <input type="radio" name="person" id="Gail" />
-                <label htmlFor="Gail">Gail</label>
-            </div>
-            <div>
-                <input type="radio" name="person" id="Elizabeth" />
-                <label htmlFor="Elizabeth">Elizabeth</label>
-            </div>
-            <div>
-                <input type="radio" name="person" id="Michael" />
-                <label htmlFor="Michael">Michael</label>
-            </div>
-            <div>
-                <input type="radio" name="person" id="Andrea" />
-                <label htmlFor="Andrea">Andrea</label>
-            </div>
-            <div>
-                <input type="radio" name="person" id="Thomas" />
-                <label htmlFor="Thomas">Thomas</label>
-            </div>
-            <div>
-                <input type="radio" name="person" id="Brett" />
-                <label htmlFor="Brett">Brett</label>
-            </div>
-            <div>
-                <input type="radio" name="person" id="Policeman" />
-                <label htmlFor="Policeman">Policeman</label>
-            </div>
-        </div>
+        <StyledPeople>
+            {PEOPLE.map((person) => (
+                <Person key={person}>
+                    <Input type="radio" name="person" id={person} value={person} onChange={() => {onPersonChange(person); onOptionChange(null)}} />
+                    <Label htmlFor={person}>{person}</Label>
+                </Person>
+            ))}
+            <Person>
+                <Input type="radio" name="person" id="Inspector" value="Inspector" onChange={() => onPersonChange("Inspector")}/>
+                <Label htmlFor="Inspector">Inspector</Label>
+            </Person>
+        </StyledPeople>
     );
 }
 

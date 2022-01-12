@@ -2,7 +2,13 @@
     "Gail": {
         "Person": {
             "Elizabeth": "Elizabeth is my daughter.  She helps me a lot with the office paperwork while my husband is away.",
-            "Michael": "Michael is my son.  I wish I would have had more time to spend with him, but I started getting very busy with work when he was younger."
+            "Michael": "Michael is my son.  I wish I would have had more time to spend with him, but I started getting very busy with work when he was younger.",
+            "Andrea": "Andrea is the maid.  She's taken good care of Michael when he was growing up, but she did end up involved in an affair with my husband.",
+            "Thomas": "Thomas is the chef and Andrea's older brother.  He's been rather cold to my husband after finding out about the affair.",
+            "Brett": "My husband's older brother.  He moved in to lend us a hand with things at home and has been very supportive."
+        },
+        "Weapon": {
+            "Wrench": "What do you expect me to do with a wrench?"
         }
     }
 }

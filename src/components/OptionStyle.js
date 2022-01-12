@@ -16,6 +16,7 @@ export const Label = styled.label`
     border: 2px solid grey;
     border-radius: 5px;
     font-weight: 500;
+    user-select: none;
 `;
 
 export const Input = styled.input`
